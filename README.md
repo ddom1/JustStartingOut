@@ -1,2 +1,2 @@
 # JustStartingOut
-Used to create a portfolio.
+Used to learn about github and eventually create a portfolio.
