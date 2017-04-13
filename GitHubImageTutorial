@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>A whale of a greeting</title>
+  </head>
+  <body>
+    <h1>hello, world</h1>
+    <p>Call me Ishmael.</p>
+    <img src="https://cloud.githubusercontent.com/assets/27441292/25021065/db4c89be-205e-11e7-85bd-b06a7cf52c2e.jpg">
+  </body>
+</html>
+
