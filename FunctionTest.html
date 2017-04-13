@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+
+<form>
+<body>
+<body bgcolor="#E6E6FA">
+<div><br><style="font-size:"4";color:black;text-shadow:1px 1px 1px #000;">Consumer Products Serial Number Translator<br><br></style></div>
+<div>
+<table border="0" id="table4" cellspacing="3" width="200" height="148">
+		<tr>
+			
+         <td align="left" valign="top" width="200">
+         <select id="myList" >
+	   <option id="stylesheet1" value="default">Select Product Category</option>
+  	   <option id="stylesheet2" value="one">Blu-ray</option>
+           <option id="stylesheet3" value="two">Television</option>  
+           <option id="stylesheet4" value="three">Telephone</option>
+           <option id="stylesheet5" value="four">Camera</option>
+         </select>	
+
+         			
+<br><br><br><font size="1" face="Arial">Enter Serial Number</font><br>
+				<font size="1">
+				<input id="serial_num" type="text" name="serial_num1" size="18" style="font-family: Arial; "></font><br>
+				<font size="1" face="Arial">(Case Sensitive)</font><font size="2">&nbsp;&nbsp;</font><br><br><input type="button" value="Read" name="sub_btn1" onclick="decode();" style="font-size: 8pt; font-family: Tahoma">		
+	</td>		
+		<td></td>
+                <td></td>
+		<td></td>
+		<td></td>	
+			<td valign="top" width="198">
+				<font size="2" face="Arial"><b>Manufactured:</b></font><br>
+				Year - <div ID="decoded_yr" style="display: inline">?</div><br>
+				Month - <div ID="decoded_mnth" style="display: inline">?</div><br>
+                                Day - <div ID="decoded_dy" style="display: inline">?</div>
+               <td></td>			
+			<td valign="top" width="198">
+				<b><font size="2" face="Arial">Todays Date:</b></font><br>
+				<script> document.write(new Date().toLocaleDateString()); </script></td>
+				
+		</tr>
+	</table>
+</div>
+
+</form>
+<script language="javascript">
+document.getElementById("myList").onchange = function() {
+   var sheet=document.getElementById("myList").value;
+
+   if(sheet=="one"){
+   setActiveStyleSheet("theme1");
+   alert("Tested");
+   }
+   else if(sheet=="two"){
+  
+
+	
+	function decode(){
+	val = ""
+	serial_val = document.getElementById('serial_num').value
+	output = serial_val
+		for (i = 0; i <= output.length; i++) { 
+	    val = output.charAt (i) + val
+	  }
+	
+	yr = output.charAt(2)
+		if (yr == 8)
+	 	{yr = "2018"}
+	 	else if (yr == 7)
+	 	{yr = "2017"}
+	 	else if (yr == 6)
+	 	{yr = "2016"}
+	 	else if (yr == 5)
+	 	{yr = "2015"}
+		else if (yr == 4)
+	 	{yr = "2014"}
+	 	else if (yr == 3)
+	 	{yr = "2013"}
+	 	else if (yr == 2)
+	 	{yr = "2012"}
+	 	else if (yr == 1)
+	 	{yr = "2011"}
+	 	else if (yr == 0)
+	 	{yr = "2010"}
+	 	else if (yr == 9)
+	 	{yr = "2009"}
+	 	else
+	 	{yr = "N/A"}
+	 	
+	mnth = output.charAt(3)
+	wk = output.charAt(4)
+		if (mnth == "A")
+	 	{mnth = "January"}
+	 	else if (mnth == "B")
+	 	{mnth = "February"}
+	 	else if (mnth == "C")
+	 	{mnth = "March"}
+	 	else if (mnth == "D")
+	 	{mnth = "April"}	 	
+	 	else if (mnth == "E")
+	 	{mnth = "May"}
+	 	else if (mnth == "F")
+	 	{mnth = "June"}
+        else if (mnth == "G")
+	 	{mnth = "July"}
+	 	else if (mnth == "H")
+	 	{mnth = "August"}
+	 	else if (mnth == "S")
+	 	{mnth = "September"}
+	 	else if (mnth == "T")
+	 	{mnth = "October"}
+	 	else if (mnth == "K")
+	 	{mnth = "November"}
+	 	else if (mnth == "L")
+	 	{mnth = "December"}
+		else 
+		{mnth = "N/A"}
+		
+		
+	document.getElementById('decoded_yr').innerHTML = yr
+	document.getElementById('decoded_mnth').innerHTML = mnth
+	
+	}
+	
+	
+        
+   
+
+   else if(sheet=="three"){
+   alert("Hi");   
+   setActiveStyleSheet("theme3");
+   }
+   else{
+   setActiveStyleSheet("default");
+   }
+   return false
+};
